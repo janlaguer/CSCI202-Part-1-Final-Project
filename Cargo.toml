@@ -1,0 +1,9 @@
+[package]
+name = "finals"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jan Jozef Laguer", "Franz Hernandez"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
