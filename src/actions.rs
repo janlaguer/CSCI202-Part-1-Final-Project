@@ -126,7 +126,7 @@ pub fn add_book (collection: &mut Vec<[String; 9]>, n_book: &mut u8) {
         );
         collection.push(book);
     } else if choice == 3 {
-        let s_date = get_input("Enter Date when rented");
+        let s_date = get_input("Enter Date when borrowed");
         let e_date = get_input("Enter Date when book's due");
         let book = create_book(author, 
             title, 
