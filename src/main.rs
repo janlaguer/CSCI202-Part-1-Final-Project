@@ -1,11 +1,9 @@
 mod utils;
 mod actions;
-use std::io;
-use utils::remove_trailing_whitespace;
+use utils::get_input;
 use actions::{print_books, add_book, remove_book};
 
 fn main() {
-    let mut username = String::new();
     let mut collection = vec![[
         "PEP 20 - The Zen of Python".to_string(), // title
         "Tim Peters".to_string(), // author
@@ -19,11 +17,7 @@ fn main() {
     ]];
     let mut n_books: u8 = collection.len() as u8;
 
-    println!("Enter name: ");
-    io::stdin()
-        .read_line(&mut username)
-        .expect("failed to read line"); // pointers are normally immutable
-    remove_trailing_whitespace(&mut username); // remove any trailing whitespaces
+    let username = get_input("Enter name: ");
 
     println!("Welcome to your library {username}. You currently have {n_books} in your collection.");
     loop {
@@ -33,11 +27,7 @@ fn main() {
         3. Remove a book\n\
         4. Exit\n");
 
-        let mut choice = String::new();
-        io::stdin()
-            .read_line(&mut choice)
-            .expect("failed to read line");
-        remove_trailing_whitespace(&mut choice);
+        let choice = get_input("");
 
         match choice.parse::<u8>() {
             Ok(ok) => {
